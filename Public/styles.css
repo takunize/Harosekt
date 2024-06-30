@@ -1,0 +1,231 @@
+/* Reset de estilos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+.sidebar {
+    flex: 0 0 250px;
+    background-color: #36393f;
+    color: white;
+    padding: 20px;
+}
+
+.profile img {
+    width: 145px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.banner {
+    width: 100%;
+    height: 100px; /* Ajusta la altura según sea necesario */
+    overflow: hidden;
+    position: relative;
+}
+
+#banner-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0; /* Hacer que el borde sea cuadrado */
+}
+
+button {
+    background-color: #9900ff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 12px;
+}
+
+.profile-details {
+    display: flex;
+    align-items: center;
+}
+
+.profile-picture {
+    width: 50px; /* Ajusta el tamaño de la foto de perfil según tus necesidades */
+    height: 50px; /* Ajusta el tamaño de la foto de perfil según tus necesidades */
+    border-radius: 50%;
+    margin-right: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.username {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.users {
+    margin-top: 20px;
+}
+
+.chat {
+    flex: 1;
+    padding: 20px;
+    background-image: url('imagen-god.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-left: 1px solid #ccc;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-messages {
+    flex: 1;
+    overflow-y: scroll;
+    padding-bottom: 20px;
+}
+
+.message {
+    background-color: #f0f0f0;
+    padding: 10px;
+    margin-bottom: 5px;
+}
+
+.chat-input {
+    display: flex;
+    margin-top: 20px;
+}
+
+.chat-input input {
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.chat-input button {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin-left: 10px;
+    border: none;
+    background-color: #7289da;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.edit-profile-modal {
+    display: none;
+    position: fixed;
+    z-index: 3;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 300px;
+    border-radius: 10px;
+    text-align: left;
+}
+
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: black;
+    text-decoration: none;
+}
+
+.member-list {
+    display: none;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.member-list.show {
+    display: block;
+}
+
+/* Estilos para los marcos de la foto de perfil */
+.frame1 {
+    border: 5px solid #FFD700; /* Oro */
+    position: relative;
+}
+
+.frame2 {
+    border: 5px solid #00BFFF; /* Azul profundo */
+    position: relative;
+}
+
+.frame3 {
+    border: 5px solid #FF69B4; /* Rosa intenso */
+    position: relative;
+}
+
+/* Animación de corazones */
+@keyframes float {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-150px) scale(0.5);
+        opacity: 0;
+    }
+}
+
+.heart {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background: url('https://upload.wikimedia.org/wikipedia/commons/e/e6/Heart_corazón.svg') no-repeat center center;
+    background-size: contain;
+    opacity: 0;
+    animation: float 2s linear infinite;
+}
+
+.frame1 .heart {
+    animation-delay: 0s;
+}
+
+.frame2 .heart {
+    animation-delay: 1s;
+}
+
+.frame3 .heart {
+    animation-delay: 2s;
+}
